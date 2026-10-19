@@ -1,148 +1,570 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>امداد لیفتراک خراسان | تعمیرات تخصصی لیفتراک</title>
-<style>
-body {
-    margin: 0;
-    font-family: Tahoma, Arial, sans-serif;
-    background: #f4f6f8;
-    color: #222;
-    line-height: 2;
-}
-header {
-    background: #10243a;
-    color: white;
-    text-align: center;
-    padding: 28px 15px;
-}
-header h1 {
-    color: #ffcc00;
-    margin: 0;
-}
-nav {
-    background: #ffcc00;
-    padding: 10px;
-    text-align: center;
-}
-nav a {
-    color: #10243a;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-.hero {
-    background: #173b5e;
-    color: white;
-    text-align: center;
-    padding: 45px 20px;
-}
-.hero h2 {
-    color: #ffcc00;
-    font-size: 26px;
-}
-.button {
-    display: inline-block;
-    background: #ffcc00;
-    color: #10243a;
-    padding: 10px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-section {
-    padding: 25px 18px;
-    max-width: 1000px;
-    margin: auto;
-}
-h2 {
-    color: #173b5e;
-}
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-.card {
-    background: white;
-    padding: 18px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px #00000012;
-}
-.card h3 {
-    color: #173b5e;
-}
-footer {
-    background: #10243a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5c400">
+  <meta name="description" content="تعمیرات تخصصی و تأمین قطعات لیفتراک در خراسان">
+  <title>امداد لیفتراک خراسان | تعمیرات و قطعات</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --yellow: #f5c400;
+      --black: #151515;
+      --dark: #222222;
+      --light: #f6f6f6;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--white);
+      border-bottom: 4px solid var(--yellow);
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: bold;
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: 2px solid var(--yellow);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--yellow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.62)),
+        url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 4px 13px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      color: #eeeeee;
+      font-size: 17px;
+      margin-bottom: 27px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading .small-title {
+      color: #9a7b00;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(25px, 4vw, 34px);
+      margin: 7px 0 12px;
+    }
+
+    .section-heading p {
+      color: #666;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .about-image {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 5px solid var(--yellow);
+      display: block;
+    }
+
+    .about-text h2 {
+      font-size: 29px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+.services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid #e4e4e4;
+      border-bottom: 4px solid var(--yellow);
+      padding: 25px 22px;
+      border-radius: 9px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      transition: transform .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .parts {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .parts .section-heading p {
+      color: #cccccc;
+    }
+
+    .parts .section-heading .small-title {
+      color: var(--yellow);
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .brand-card {
+      background: var(--dark);
+      border: 1px solid #444;
+      border-radius: 8px;
+      text-align: center;
+      padding: 26px 12px;
+    }
+
+    .brand-card strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .brand-card span {
+      color: #dddddd;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5c400">
+  <meta name="description" content="تعمیرات تخصصی و تأمین قطعات لیفتراک در خراسان">
+  <title>امداد لیفتراک خراسان | تعمیرات و قطعات</title>
 
-<header>
-    <h1>امداد لیفتراک خراسان</h1>
-    <p>خدمات فنی و تعمیرات تخصصی لیفتراک</p>
-</header>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<nav>
-    <a href="#home">صفحه اصلی</a>
-    <a href="#services">خدمات ما</a>
-    <a href="#about">درباره ما</a>
-    <a href="#contact">تماس با ما</a>
-</nav>
+    :root {
+      --yellow: #f5c400;
+      --black: #151515;
+      --dark: #222222;
+      --light: #f6f6f6;
+      --white: #ffffff;
+    }
 
-<div class="hero" id="home">
-    <h2>تعمیرات و سرویس لیفتراک در خراسان رضوی</h2>
-    <p>ارائه خدمات فنی و نگهداری لیفتراک برای شرکت‌ها و واحدهای صنعتی</p>
-    <a class="button" href="#contact">درخواست خدمات</a>
-</div>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<section id="services">
-    <h2>خدمات ما</h2>
-    <div class="services">
-        <div class="card">
-            <h3>🔧 تعمیر موتور</h3>
-            <p>بررسی و تعمیر مشکلات فنی موتور لیفتراک.</p>
-        </div>
-        <div class="card">
-            <h3>⚙️ تعمیر گیربکس</h3>
-            <p>عیب‌یابی و تعمیر سیستم انتقال قدرت.</p>
-        </div>
-        <div class="card">
-            <h3>🛠️ تعمیر هیدرولیک و فرمان</h3>
-            <p>بررسی ایرادهای سیستم هیدرولیک و فرمان لیفتراک.</p>
-        </div>
-        <div class="card">
-            <h3>🔌 تعمیر برق</h3>
-            <p>بررسی سیستم برق و عیب‌یابی مشکلات الکتریکی.</p>
-        </div>
-        <div class="card">
-            <h3>🛞 تعمیر دیفرانسیل و ترمز</h3>
-            <p>بررسی و تعمیر سیستم دیفرانسیل و ترمز.</p>
-        </div>
-        <div class="card">
-            <h3>📋 سرویس دوره‌ای</h3>
-            <p>سرویس و نگهداری پیشگیرانه برای کاهش خرابی دستگاه.</p>
-        </div>
-    </div>
-</section>
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.9;
+    }
 
-<section id="about">
-    <h2>درباره امداد لیفتراک خراسان</h2>
-    <p>
-        هدف ما ارائه خدمات تعمیرات، عیب‌یابی و نگهداری لیفتراک
-        به شرکت‌ها، انبارها و مجموعه‌های صنعتی در خراسان رضوی است.
-    </p>
-</section>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-<section id="contact">
-    <h2>تماس با ما</h2>
-    <p>برای دریافت خدمات و هماهنگی تعمیرات، با ما تماس بگیرید.</p>
-    <p>شماره تماس: به‌زودی درج می‌شود</p>
-    <p>محدوده خدمات: مشهد و خراسان رضوی</p>
-</section>
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--white);
+      border-bottom: 4px solid var(--yellow);
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: bold;
+      color: var(--yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 11px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: 2px solid var(--yellow);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--yellow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.62)),
+        url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 4px 13px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      color: #eeeeee;
+      font-size: 17px;
+      margin-bottom: 27px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading .small-title {
+      color: #9a7b00;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(25px, 4vw, 34px);
+      margin: 7px 0 12px;
+    }
+
+    .section-heading p {
+      color: #666;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .about-image {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 5px solid var(--yellow);
+      display: block;
+    }
+
+    .about-text h2 {
+      font-size: 29px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+.services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid #e4e4e4;
+      border-bottom: 4px solid var(--yellow);
+      padding: 25px 22px;
+      border-radius: 9px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+      transition: transform .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .parts {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .parts .section-heading p {
+      color: #cccccc;
+    }
+
+    .parts .section-heading .small-title {
+      color: var(--yellow);
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .brand-card {
+      background: var(--dark);
+      border: 1px solid #444;
+      border-radius: 8px;
+      text-align: center;
+      padding: 26px 12px;
+    }
+
+    .brand-card strong {
+      display: block;
+      color: var(--yellow);
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .brand-card span {
+      color: #dddddd;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
